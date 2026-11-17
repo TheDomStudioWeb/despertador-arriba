@@ -16,6 +16,8 @@ android {
         val build = (System.getenv("GITHUB_RUN_NUMBER") ?: "1").toInt()
         versionCode = 100 + build
         versionName = "1.$build"
+        // Solo procesadores de teléfonos (achica mucho el APK)
+        ndk { abiFilters += listOf("arm64-v8a", "armeabi-v7a") }
     }
 
     // Firma propia: la misma en cada compilación, así las actualizaciones se instalan encima
