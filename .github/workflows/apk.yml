@@ -1,0 +1,43 @@
+name: APK Arriba
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["**.md"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: |
+            21
+            25
+
+      - name: Compilar APK
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleRelease --no-daemon --stacktrace
+          cp app/build/outputs/apk/release/app-release.apk Arriba.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Arriba-apk
+          path: Arriba.apk
+
+      - name: Publicar en Releases
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: apk-${{ github.run_number }}
+          name: Arriba ${{ github.run_number }}
+          make_latest: true
+          files: Arriba.apk
+          body: Descargá **Arriba.apk** desde el teléfono e instalala encima de la anterior.

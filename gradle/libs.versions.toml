@@ -1,0 +1,18 @@
+[versions]
+agp = "9.4.1"
+coreKtx = "1.10.1"
+appcompat = "1.6.1"
+mlkitLabeling = "17.0.9"
+mlkitBarcode = "17.3.0"
+webkit = "1.12.1"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+mlkit-labeling = { group = "com.google.mlkit", name = "image-labeling", version.ref = "mlkitLabeling" }
+mlkit-barcode = { group = "com.google.mlkit", name = "barcode-scanning", version.ref = "mlkitBarcode" }
+
+androidx-webkit = { group = "androidx.webkit", name = "webkit", version.ref = "webkit" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
