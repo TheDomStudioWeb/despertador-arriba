@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>Arriba</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="ring" id="ring">
+  <div id="intro" style="display:flex;flex-direction:column;flex:1">
+    <div class="clock" id="clock">--:--</div>
+    <div class="date" id="date"></div>
+    <div class="rlabel" id="label">¡Arriba!</div>
+    <div class="pulse" id="pulse"></div>
+    <div class="hint" id="what"></div>
+    <div class="spacer"></div>
+    <button class="btn primary" id="start" style="padding:18px;font-size:17px">Empezar misión</button>
+    <button class="btn ghost hidden" id="snooze" style="margin-top:10px"></button>
+    <div class="sign" style="margin:18px 0 0">Arriba · <b>THE DOM STUDIO WEB</b></div>
+  </div>
+  <div id="stage" class="mission hidden"></div>
+  <div id="swapbox" class="hidden" style="margin-top:12px">
+    <button class="btn ghost small" id="swap" style="width:100%"></button>
+  </div>
+</div>
+<script src="js/icons.js"></script>
+<script src="js/common.js"></script>
+<script src="js/missions.js"></script>
+<script src="js/ring.js"></script>
+</body>
+</html>

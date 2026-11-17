@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>Arriba</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="app">
+  <div class="top">
+    <div class="brand serif">Arriba<small>Despertador con misiones</small></div>
+    <div class="next" id="next"></div>
+  </div>
+
+  <section data-view="alarms">
+    <div id="permBanner"></div>
+    <div id="alarmList"></div>
+  </section>
+
+  <section data-view="objects" class="hidden">
+    <p class="muted" style="margin:0 4px 6px;font-size:13px">Registrá cosas que estén <b>lejos de la cama</b>: la pileta del baño, la heladera, la cafetera. Cuando suene la alarma vas a tener que ir hasta ahí.</p>
+    <div class="section-title">Objetos para fotografiar</div>
+    <div id="photoList"></div>
+    <button class="btn" id="addPhoto">Registrar objeto</button>
+    <div class="section-title">Códigos de barras o QR</div>
+    <div id="codeList"></div>
+    <button class="btn" id="addCode">Registrar código</button>
+  </section>
+
+  <section data-view="missions" class="hidden">
+    <p class="muted" style="margin:0 4px 14px;font-size:13px">Estas son todas las misiones. Cada mañana te toca una al azar entre las que elijas en la alarma. Tocá una para practicarla.</p>
+    <div class="mission-grid" id="practiceGrid"></div>
+  </section>
+
+  <section data-view="settings" class="hidden">
+    <div class="section-title" style="margin-top:0">Permisos para que nunca falle</div>
+    <div class="card" id="perms"></div>
+    <div class="section-title">Exigencia de las fotos</div>
+    <div class="seg" id="photoSens">
+      <button data-v="facil">Fácil</button><button data-v="normal">Normal</button><button data-v="estricta">Estricta</button>
+    </div>
+    <p class="muted" style="font-size:12px;margin:8px 4px 0">Si te rechaza la foto del objeto correcto, bajala a Fácil. Si la engañás muy fácil, subila.</p>
+    <div class="section-title">Últimas alarmas</div>
+    <div class="card" id="history"></div>
+    <div class="sign">
+      <div>Hecho por <b>THE DOM STUDIO WEB</b></div>
+      <div>Estructura y potencia digital</div>
+      <button id="domLink">thedomstudioweb.github.io</button>
+    </div>
+  </section>
+</div>
+
+<button class="fab" id="fab"></button>
+
+<nav class="tabs">
+  <button class="tab on" data-tab="alarms"></button>
+  <button class="tab" data-tab="objects"></button>
+  <button class="tab" data-tab="missions"></button>
+  <button class="tab" data-tab="settings"></button>
+</nav>
+
+<!-- Editor de alarma -->
+<div class="sheet" id="editor"></div>
+<!-- Registrar objeto / código / practicar -->
+<div class="sheet" id="sheet2"></div>
+
+<script src="js/icons.js"></script>
+<script src="js/common.js"></script>
+<script src="js/missions.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
